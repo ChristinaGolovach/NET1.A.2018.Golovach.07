@@ -27,7 +27,7 @@ namespace JaggedArraySortingLogic
         {
             int[] temp = first;
             first = second;
-            second = first;
+            second = temp;
         }
 
         private static void CheckInputData(int[][] array, IComparer<int[]> comparer)
