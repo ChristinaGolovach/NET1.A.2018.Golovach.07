@@ -7,6 +7,8 @@ namespace JaggedArraySortingLogic
     {
         public static void Sort(int[][] array, IComparer<int[]> comparer)
         {
+            CheckInputData(array, comparer);
+
             int length = array.Length;
 
             for (int i = 0; i < length; i++)
@@ -28,7 +30,7 @@ namespace JaggedArraySortingLogic
             second = first;
         }
 
-        private static void CheckInputArray(int[][] array)
+        private static void CheckInputData(int[][] array, IComparer<int[]> comparer)
         {
             if (array == null)
             {
@@ -38,6 +40,11 @@ namespace JaggedArraySortingLogic
             if (array.Length == 0)
             {
                 throw new ArgumentException($"The {nameof(array)} can not be empty.");
+            }
+
+            if (comparer == null)
+            {
+                throw new ArgumentNullException($"The {nameof(comparer)} can not be null.");
             }
         }
     }
