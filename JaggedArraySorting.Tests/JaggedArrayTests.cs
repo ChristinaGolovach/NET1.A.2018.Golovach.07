@@ -1,6 +1,6 @@
 ﻿using System;
-using NUnit.Framework;
 using JaggedArraySorting.Tests.TypeOfSorting;
+using NUnit.Framework;
 
 namespace JaggedArraySortingLogic.Tests
 {
@@ -13,10 +13,10 @@ namespace JaggedArraySortingLogic.Tests
             // Arange
             int[][] input = new int[][]
             {
-                new int[] {1,-3,5,7,9},
-                new int[] {0,2,4,989},
+                new int[] { 1, -3, 5, 7, 9 },
+                new int[] { 0, 2, 4, 989 },
                 null,
-                new int[] {11,-22},
+                new int[] { 11, -22 },
                 new int[0]
             };
 
@@ -24,9 +24,9 @@ namespace JaggedArraySortingLogic.Tests
             {
                 null,
                 new int[0],
-                new int[] {1,-3,5,7,9},
-                new int[] {11,-22},
-                new int[] {0,2,4,989}             
+                new int[] { 1, -3, 5, 7, 9 },
+                new int[] { 11, -22 },
+                new int[] { 0, 2, 4, 989 }             
             };
 
             // Act
@@ -42,18 +42,18 @@ namespace JaggedArraySortingLogic.Tests
             // Arange
             int[][] input = new int[][]
             {
-                new int[] {1,-3,5,7,9},
-                new int[] {0,2,4,989},
+                new int[] { 1, -3, 5, 7, 9 },
+                new int[] { 0, 2, 4, 989 },
                 null,
-                new int[] {11,-22},
+                new int[] { 11, -22 },
                 new int[0]
             };
 
             int[][] expected = new int[][]
             {
-                new int[] {0,2,4,989},
-                new int[] {11,-22},
-                new int[] {1,-3,5,7,9},
+                new int[] { 0, 2, 4, 989 },
+                new int[] { 11, -22 },
+                new int[] { 1, -3, 5, 7, 9 },
                 null,
                 new int[0]                                              
             };
@@ -71,10 +71,10 @@ namespace JaggedArraySortingLogic.Tests
             // Arange
             int[][] input = new int[][]
             {
-                new int[] {1,-3,5,7,9},
-                new int[] {0,2,4,989},
+                new int[] { 1, -3, 5, 7, 9 },
+                new int[] { 0, 2, 4, 989 },
                 null,
-                new int[] {11,-22},
+                new int[] { 11, -22 },
                 new int[0]
             };
 
@@ -82,9 +82,9 @@ namespace JaggedArraySortingLogic.Tests
             {
                 null,
                 new int[0],
-                new int[] {11,-22},
-                new int[] {1,-3,5,7,9},                
-                new int[] {0,2,4,989}
+                new int[] { 11, -22 },
+                new int[] { 1, -3, 5, 7, 9 },                
+                new int[] { 0, 2, 4, 989 }
             };
 
             // Act
@@ -100,18 +100,18 @@ namespace JaggedArraySortingLogic.Tests
             // Arange
             int[][] input = new int[][]
             {
-                new int[] {1,-3,5,7,9},
-                new int[] {0,2,4,989},
+                new int[] { 1, -3, 5, 7, 9 },
+                new int[] { 0, 2, 4, 989 },
                 null,
-                new int[] {11,-22},
+                new int[] { 11, -22 },
                 new int[0]
             };
 
             int[][] expected = new int[][]
             {
-                new int[] {0,2,4,989},
-                new int[] {1,-3,5,7,9},
-                new int[] {11,-22},
+                new int[] { 0, 2, 4, 989 },
+                new int[] { 1, -3, 5, 7, 9 },
+                new int[] { 11, -22 },
                 null,
                 new int[0]                                        
             };
@@ -129,10 +129,10 @@ namespace JaggedArraySortingLogic.Tests
             // Arange
             int[][] input = new int[][]
             {
-                new int[] {1,-3,5,7,9},
-                new int[] {0,2,4,989},
+                new int[] { 1, -3, 5, 7, 9 },
+                new int[] { 0, 2, 4, 989 },
                 null,
-                new int[] {11,-22},
+                new int[] { 11, -22 },
                 new int[0]
             };
 
@@ -140,9 +140,9 @@ namespace JaggedArraySortingLogic.Tests
             {
                 null,
                 new int[0],
-                new int[] {11,-22},
-                new int[] {1,-3,5,7,9},                
-                new int[] {0,2,4,989}
+                new int[] { 11, -22 },
+                new int[] { 1, -3, 5, 7, 9 },                
+                new int[] { 0, 2, 4, 989 }
             };
 
             // Act
@@ -158,18 +158,18 @@ namespace JaggedArraySortingLogic.Tests
             // Arange
             int[][] input = new int[][]
             {
-                new int[] {1,-3,5,7,9},
-                new int[] {0,2,4,989},
+                new int[] { 1, -3, 5, 7, 9 },
+                new int[] { 0, 2, 4, 989 },
                 null,
-                new int[] {11,-22},
+                new int[] { 11, -22 },
                 new int[0]
             };
 
             int[][] expected = new int[][]
             {
-                new int[] {0,2,4,989},
-                new int[] {1,-3,5,7,9},
-                new int[] {11,-22},
+                new int[] { 0, 2, 4, 989 },
+                new int[] { 1, -3, 5, 7, 9 },
+                new int[] { 11, -22 },
                 null,
                 new int[0]
             };
@@ -204,16 +204,15 @@ namespace JaggedArraySortingLogic.Tests
             // Arange
             int[][] input = new int[][]
             {
-                new int[] {1,-3,5,7,9},
-                new int[] {0,2,4,989},
+                new int[] { 1, -3, 5, 7, 9 },
+                new int[] { 0, 2, 4, 989 },
                 null,
-                new int[] {11,-22},
+                new int[] { 11, -22 },
                 new int[0]
             };
 
             // Act - Assert
-            Assert.Throws<ArgumentNullException>(() => JaggedArray.Sort(input,null));
+            Assert.Throws<ArgumentNullException>(() => JaggedArray.Sort(input, null));
         }
-
     }
 }
