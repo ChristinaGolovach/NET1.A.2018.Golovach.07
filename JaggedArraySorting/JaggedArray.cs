@@ -11,11 +11,11 @@ namespace JaggedArraySortingLogic
 
             for (int i = 0; i < length; i++)
             {
-                for (int j = length - 1; j < i; j--)
+                for (int j = i + 1; j < array.Length; j++)
                 {
-                    if (comparer.Compare(array[j],array[j + 1]) < 0)
+                    if (comparer.Compare(array[i], array[j]) > 0)
                     {
-                        Swap(ref array[j], ref array[j + 1]);
+                        Swap(ref array[i], ref array[j]);
                     }
                 }
             }
