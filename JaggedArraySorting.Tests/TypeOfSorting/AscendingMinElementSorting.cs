@@ -23,19 +23,7 @@ namespace JaggedArraySorting.Tests.TypeOfSorting
         /// </returns>
         public int Compare(int[] firstArray, int[] secondArray)
         {
-            if (firstArray.MinElement() > secondArray.MinElement())
-            {
-                return 1;
-            }
-
-            if (firstArray.MinElement() < secondArray.MinElement())
-            {
-                return -1;
-            }
-            else
-            {
-                return 0;
-            }
+            return firstArray.MinElement().CompareTo(secondArray.MinElement());
         }
     }
 }

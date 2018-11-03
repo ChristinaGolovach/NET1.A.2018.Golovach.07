@@ -23,19 +23,7 @@ namespace JaggedArraySorting.Tests.TypeOfSorting
         /// </returns>
         public int Compare(int[] firstArray, int[] secondArray)
         {
-            if (firstArray.MaxElement() > secondArray.MaxElement())
-            {
-                return 1;
-            }
-
-            if (firstArray.MaxElement() < secondArray.MaxElement())
-            {
-                return -1;
-            }
-            else
-            {
-                return 0;
-            }
+            return firstArray.MaxElement().CompareTo(secondArray.MaxElement());
         }
     }
 }

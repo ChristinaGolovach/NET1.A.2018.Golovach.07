@@ -23,19 +23,7 @@ namespace JaggedArraySorting.Tests.TypeOfSorting
         /// </returns>
         public int Compare(int[] firstArray, int[] secondArray)
         {
-            if (firstArray.Sum() > secondArray.Sum())
-            {
-                return 1;
-            }
-
-            if (firstArray.Sum() < secondArray.Sum())
-            {
-                return -1;
-            }
-            else
-            {
-                return 0;
-            } 
+            return firstArray.Sum().CompareTo(secondArray.Sum()); 
         }
     }
 }

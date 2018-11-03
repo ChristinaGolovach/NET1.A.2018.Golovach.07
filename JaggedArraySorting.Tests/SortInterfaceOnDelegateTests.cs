@@ -1,17 +1,16 @@
 ﻿using System;
-using JaggedArraySorting.Tests.TypeOfSorting;
-using System.Collections.Generic;
 using NUnit.Framework;
+using JaggedArraySortingLogic;
+using JaggedArraySorting.Tests.TypeOfSorting;
 
-namespace JaggedArraySortingLogic.Tests
+namespace JaggedArraySorting.Tests
 {
-    [TestFixture]
-    public class JaggedArrayTests
+    class SortInterfaceOnDelegateTests
     {
         [Test]
         public void Sort_AscendingMaxElementSorting_RerurnSortedArray()
         {
-            // Arange
+            // Arrange
             int[][] input = new int[][]
             {
                 new int[] { 1, -3, 5, 7, 9 },
@@ -27,20 +26,20 @@ namespace JaggedArraySortingLogic.Tests
                 new int[0],
                 new int[] { 1, -3, 5, 7, 9 },
                 new int[] { 11, -22 },
-                new int[] { 0, 2, 4, 989 }             
+                new int[] { 0, 2, 4, 989 }
             };
 
             // Act
-            JaggedArray.Sort(input, new AscendingMaxElementSorting());
+            SortInterfaceOnDelegate.Sort(input, new AscendingMaxElementSorting());
 
             // Assert
-            CollectionAssert.AreEqual(expected, input);            
+            CollectionAssert.AreEqual(expected, input);
         }
 
         [Test]
         public void Sort_DescendingMaxElementSorting_RerurnSortedArray()
         {
-            // Arange
+            // Arrange
             int[][] input = new int[][]
             {
                 new int[] { 1, -3, 5, 7, 9 },
@@ -56,12 +55,12 @@ namespace JaggedArraySortingLogic.Tests
                 new int[] { 11, -22 },
                 new int[] { 1, -3, 5, 7, 9 },
                 null,
-                new int[0]                                              
+                new int[0]
             };
 
             // Act
-            JaggedArray.Sort(input, new DescendingMaxElementSorting());
-
+            SortInterfaceOnDelegate.Sort(input, new DescendingMaxElementSorting());
+           
             // Assert
             CollectionAssert.AreEqual(expected, input);
         }
@@ -69,7 +68,7 @@ namespace JaggedArraySortingLogic.Tests
         [Test]
         public void Sort_AscendingMinElementSorting_RerurnSortedArray()
         {
-            // Arange
+            // Arrange
             int[][] input = new int[][]
             {
                 new int[] { 1, -3, 5, 7, 9 },
@@ -84,13 +83,13 @@ namespace JaggedArraySortingLogic.Tests
                 null,
                 new int[0],
                 new int[] { 11, -22 },
-                new int[] { 1, -3, 5, 7, 9 },                
+                new int[] { 1, -3, 5, 7, 9 },
                 new int[] { 0, 2, 4, 989 }
             };
 
             // Act
-            JaggedArray.Sort(input, new AscendingMinElementSorting());
-
+            SortInterfaceOnDelegate.Sort(input, new AscendingMinElementSorting());
+           
             // Assert
             CollectionAssert.AreEqual(expected, input);
         }
@@ -98,7 +97,7 @@ namespace JaggedArraySortingLogic.Tests
         [Test]
         public void Sort_DescendingMinElementSorting_RerurnSortedArray()
         {
-            // Arange
+            // Arrange
             int[][] input = new int[][]
             {
                 new int[] { 1, -3, 5, 7, 9 },
@@ -114,12 +113,12 @@ namespace JaggedArraySortingLogic.Tests
                 new int[] { 1, -3, 5, 7, 9 },
                 new int[] { 11, -22 },
                 null,
-                new int[0]                                        
+                new int[0]
             };
 
             // Act
-            JaggedArray.Sort(input, new DescendingMinElementSorting());
-
+            SortInterfaceOnDelegate.Sort(input, new DescendingMinElementSorting());
+        
             // Assert
             CollectionAssert.AreEqual(expected, input);
         }
@@ -127,7 +126,7 @@ namespace JaggedArraySortingLogic.Tests
         [Test]
         public void Sort_AscendingSumSorting_RerurnSortedArray()
         {
-            // Arange
+            // Arrange
             int[][] input = new int[][]
             {
                 new int[] { 1, -3, 5, 7, 9 },
@@ -142,13 +141,13 @@ namespace JaggedArraySortingLogic.Tests
                 null,
                 new int[0],
                 new int[] { 11, -22 },
-                new int[] { 1, -3, 5, 7, 9 },                
+                new int[] { 1, -3, 5, 7, 9 },
                 new int[] { 0, 2, 4, 989 }
             };
 
             // Act
-            JaggedArray.Sort(input, new AscendingSumSorting());
-
+            SortInterfaceOnDelegate.Sort(input, new AscendingSumSorting());
+            
             // Assert
             CollectionAssert.AreEqual(expected, input);
         }
@@ -156,7 +155,7 @@ namespace JaggedArraySortingLogic.Tests
         [Test]
         public void Sort_DescendingSumSorting_RerurnSortedArray()
         {
-            // Arange
+            // Arrange
             int[][] input = new int[][]
             {
                 new int[] { 1, -3, 5, 7, 9 },
@@ -176,7 +175,7 @@ namespace JaggedArraySortingLogic.Tests
             };
 
             // Act
-            JaggedArray.Sort(input, new DescendingSumSorting());
+            SortInterfaceOnDelegate.Sort(input, new DescendingSumSorting());
 
             // Assert
             CollectionAssert.AreEqual(expected, input);
@@ -186,23 +185,24 @@ namespace JaggedArraySortingLogic.Tests
         public void Sort_PassNullArray_ThrownArgumentNullException()
         {
             // Act - Assert
-            Assert.Throws<ArgumentNullException>(() => JaggedArray.Sort(null, new DescendingSumSorting()));
+            Assert.Throws<ArgumentNullException>(() => SortInterfaceOnDelegate.Sort(null, new DescendingSumSorting()));
         }
 
         [Test]
         public void Sort_PassEmptyArray_ThrownArgumentException()
         {
-            // Arange
+            // Arrange
             int[][] input = new int[0][] { };
 
             // Act - Assert
-            Assert.Throws<ArgumentException>(() => JaggedArray.Sort(input, new DescendingSumSorting()));
+            Assert.Throws<ArgumentException>(() => SortInterfaceOnDelegate.Sort(input, new DescendingSumSorting()));
         }
+
 
         [Test]
         public void Sort_PassEmptyComparer_ThrownArgumentException()
         {
-            // Arange
+            // Arrange
             int[][] input = new int[][]
             {
                 new int[] { 1, -3, 5, 7, 9 },
@@ -212,8 +212,8 @@ namespace JaggedArraySortingLogic.Tests
                 new int[0]
             };
 
-            // Act - Assert
-            Assert.Throws<ArgumentNullException>(() => JaggedArray.Sort(input,((IComparer < int[] >)null)));
+            // Act - Assert            
+            Assert.Throws<ArgumentNullException>(() => SortInterfaceOnDelegate.Sort(input, null));
         }
     }
 }
