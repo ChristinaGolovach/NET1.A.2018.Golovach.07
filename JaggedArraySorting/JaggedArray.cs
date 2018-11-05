@@ -27,6 +27,8 @@ namespace JaggedArraySortingLogic
         {
             CheckData.CheckInputData(array, comparer);
 
+            //  Sort(array, comparer.Compare);
+
             int length = array.Length;
 
             for (int i = 0; i < length; i++)

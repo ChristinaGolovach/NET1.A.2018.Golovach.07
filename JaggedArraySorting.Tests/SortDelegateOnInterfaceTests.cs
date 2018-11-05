@@ -31,7 +31,7 @@ namespace JaggedArraySorting.Tests
             };
 
             // Act
-            SortDelegateOnInterface.Sort(JaggedArray.Sort, input, new AscendingMaxElementSorting());
+            SortDelegateOnInterface.Sort(input, new AscendingMaxElementSorting().Compare);
 
             // Assert
             CollectionAssert.AreEqual(expected, input);
@@ -60,7 +60,7 @@ namespace JaggedArraySorting.Tests
             };
 
             // Act
-            SortDelegateOnInterface.Sort(JaggedArray.Sort, input, new DescendingMaxElementSorting());
+            SortDelegateOnInterface.Sort(input, new DescendingMaxElementSorting().Compare);
             
             // Assert
             CollectionAssert.AreEqual(expected, input);
@@ -89,7 +89,7 @@ namespace JaggedArraySorting.Tests
             };
 
             // Act
-            SortDelegateOnInterface.Sort(JaggedArray.Sort, input, new AscendingMinElementSorting());
+            SortDelegateOnInterface.Sort(input, new AscendingMinElementSorting().Compare);
 
             // Assert
             CollectionAssert.AreEqual(expected, input);
@@ -118,7 +118,7 @@ namespace JaggedArraySorting.Tests
             };
 
             // Act
-            SortDelegateOnInterface.Sort(JaggedArray.Sort, input, new DescendingMinElementSorting());
+            SortDelegateOnInterface.Sort(input, new DescendingMinElementSorting().Compare);
 
             // Assert
             CollectionAssert.AreEqual(expected, input);
@@ -147,7 +147,7 @@ namespace JaggedArraySorting.Tests
             };
 
             // Act
-            SortDelegateOnInterface.Sort(JaggedArray.Sort, input, new AscendingSumSorting());
+            SortDelegateOnInterface.Sort(input, new AscendingSumSorting().Compare);
 
             // Assert
             CollectionAssert.AreEqual(expected, input);
@@ -176,7 +176,7 @@ namespace JaggedArraySorting.Tests
             };
 
             // Act
-            SortDelegateOnInterface.Sort(JaggedArray.Sort, input, new DescendingSumSorting());
+            SortDelegateOnInterface.Sort(input, new DescendingSumSorting().Compare);
 
             // Assert
             CollectionAssert.AreEqual(expected, input);
@@ -186,7 +186,7 @@ namespace JaggedArraySorting.Tests
         public void Sort_PassNullArray_ThrownArgumentNullException()
         {
             // Act - Assert
-            Assert.Throws<ArgumentNullException>(() => SortDelegateOnInterface.Sort(JaggedArray.Sort, null, new DescendingSumSorting()));
+            Assert.Throws<ArgumentNullException>(() => SortDelegateOnInterface.Sort(null, new DescendingSumSorting().Compare));
         }
 
         [Test]
@@ -196,7 +196,7 @@ namespace JaggedArraySorting.Tests
             int[][] input = new int[0][] { };
 
             // Act - Assert
-            Assert.Throws<ArgumentException>(() => SortDelegateOnInterface.Sort(JaggedArray.Sort, input, new DescendingSumSorting()));
+            Assert.Throws<ArgumentException>(() => SortDelegateOnInterface.Sort(input, new DescendingSumSorting().Compare));
         }
 
         [Test]
@@ -213,7 +213,7 @@ namespace JaggedArraySorting.Tests
             };
 
             // Act - Assert            
-            Assert.Throws<ArgumentNullException>(() => SortDelegateOnInterface.Sort(JaggedArray.Sort, input, null));
+            Assert.Throws<ArgumentNullException>(() => SortDelegateOnInterface.Sort(input, null));
         }
     }
 }

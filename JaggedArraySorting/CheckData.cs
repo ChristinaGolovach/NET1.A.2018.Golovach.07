@@ -24,17 +24,7 @@ namespace JaggedArraySortingLogic
                 throw new ArgumentNullException($"The {nameof(comparer)} can not be null.");
             }
         }
-
-        public static void CheckInputData(DelegateCallInterface delegateCallInterface, int[][] array, IComparer<int[]> comparer)
-        {
-            CheckInputData(array, comparer);
-
-            if (delegateCallInterface == null)
-            {
-                throw new ArgumentNullException($"The {nameof(delegateCallInterface)} can not be null.");
-            }
-        }        
-
+  
         public static void CheckInputArray(int[][] array)
         {
             if (array == null)

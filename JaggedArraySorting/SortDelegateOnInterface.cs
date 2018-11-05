@@ -1,18 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace JaggedArraySortingLogic
 {
-    /// <summary>
-    /// Delegate for method <see cref="Sort"/>
-    /// </summary>
-    /// <param name="array">
-    /// Jagged array for sorting.
-    /// </param>
-    /// <param name="comparer">
-    /// Comparer for set the sorting rule.
-    /// </param>
-    public delegate void DelegateCallInterface(int[][] array, IComparer<int[]> comparer);
-
     /// <summary>
     /// Represents a static class for work with Jagged Array.
     /// </summary>
@@ -27,20 +17,35 @@ namespace JaggedArraySortingLogic
         /// <param name="array">
         /// Jagged array for sorting.
         /// </param>
-        /// <param name="comparer">
-        /// Comparer for set the sorting rule.
+        /// <param name="comparison">
+        /// Comparison for set the sorting rule.
         /// </param>
         /// <exception cref="ArgumentNullException">
-        /// Thrown when <paramref name="array"/> or <paramref name="comparer"/> or <paramref name="delegateCallInterface"/> is null.
+        /// Thrown when <paramref name="array"/> or <paramref name="comparison"/> is null.
         /// </exception>
         /// <exception cref="ArgumentException">
         /// Thrown when <paramref name="array"/> is empty.
         /// </exception>
-        public static void Sort(DelegateCallInterface delegateCallInterface, int[][] array, IComparer<int[]> comparer)
+        public static void Sort(int[][] array, Comparison<int[]> comparison)
         {
-            CheckData.CheckInputData(delegateCallInterface, array, comparer);
+            CheckData.CheckInputData(array, comparison);
 
-            delegateCallInterface(array, comparer);
-        }          
+            JaggedArray.Sort(array, new ComparisonAdapter(comparison));
+        }
+
+        private class ComparisonAdapter : IComparer<int[]>
+        {
+            private Comparison<int[]> comparison;
+
+            public ComparisonAdapter(Comparison<int[]> comparison)
+            {
+                this.comparison = comparison;
+            }
+
+            public int Compare(int[] x, int[] y)
+            {
+                return comparison(x, y);
+            }
+        }
     }
 }
